@@ -6,52 +6,42 @@ public class AimAndShoot : MonoBehaviour
 {
     public Camera mainCamera;
     private Vector3 mousePos;
-    public GameObject crosshairs;
-    public GameObject player;
-    public float force;
     public GameObject bulletPrefab;
-    public Transform firePoint;
-    private Vector3 aim;
-    public float cooldownTime = 1f;
-    public bool canShoot = true;
+    public Transform bulletTransform;
+    public bool canFire;
+    private float timer;
+    public float timeBetweenFiring;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
     {
-
-        if (Input.GetButton("Fire1"))
-        {
-            if (canShoot)
-            {
-                StartCoroutine(ShootDelay());
-            }
-        }
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
         mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        crosshairs.transform.position = new Vector2(mousePos.x, mousePos.y);
 
         Vector3 rotation = mousePos - transform.position;
-        float rotationZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-    }
 
-    public IEnumerator ShootDelay()
-    {
-        Shoot();
-        canShoot = false;
-        yield return new WaitForSeconds(cooldownTime);
-        canShoot = true;
-    }
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
-    void Shoot()
-    {
-        Instantiate(bulletPrefab, firePoint.position, target.rotation);
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        if(!canFire)
+        {
+            timer += Time.deltaTime;
+            if(timer > timeBetweenFiring)
+            {
+                canFire = true;
+                timer = 0;
+            }
+        }
+
+        if(Input.GetMouseButton(0) && canFire)
+        {
+            canFire = false;
+            Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
+        }
     }
 }
