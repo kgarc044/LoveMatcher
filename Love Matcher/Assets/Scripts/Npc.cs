@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Npc : MonoBehaviour
 {
+    public Sprite[] interests;
+    public GameObject interestSprite;
     public GameObject npc;
     private Rigidbody2D rb;
     private Vector3 movementDirection = new Vector3(1, 0, 0);
@@ -12,6 +14,7 @@ public class Npc : MonoBehaviour
     void Start()
     {
         rb = npc.GetComponent<Rigidbody2D>();
+        interestSprite.GetComponent<SpriteRenderer>().sprite = interests[Random.Range(0,2)];
     }
 
     // Update is called once per frame
