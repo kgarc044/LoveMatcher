@@ -38,7 +38,7 @@ public class AimAndShoot : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0) && canFire)
+        if(Input.GetMouseButton(1) && canFire)
         {
             canFire = false;
             Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);

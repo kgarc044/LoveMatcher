@@ -15,13 +15,13 @@ public class DragObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        _dragOffset = transform.position - GetMousePos();
+        if(transform.gameObject.tag == "Draggable") _dragOffset = transform.position - GetMousePos();
     }
 
     void OnMouseDrag()
     {
         //transform.position = GetMousePos() + _dragOffset;
-        transform.position = Vector3.MoveTowards(transform.position, GetMousePos() + _dragOffset, _speed * Time.deltaTime);
+        if (transform.gameObject.tag == "Draggable") transform.position = Vector3.MoveTowards(transform.position, GetMousePos() + _dragOffset, _speed * Time.deltaTime);
     }
 
     Vector3 GetMousePos()
