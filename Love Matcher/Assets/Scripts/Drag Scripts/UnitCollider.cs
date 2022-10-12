@@ -14,8 +14,8 @@ public class UnitCollider : MonoBehaviour
         if (col.gameObject.name == "Arrow(Clone)" && transform.gameObject.tag != "Draggable")
         {
             transform.gameObject.tag = "Draggable";
-            var parti1 = GameObject.Instantiate(particle1);
-            parti1.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            var parti1 = GameObject.Instantiate(particle1, this.transform);
+            //parti1.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
             Debug.Log("Collision!");
 
