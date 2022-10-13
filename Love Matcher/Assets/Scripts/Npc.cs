@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Npc : MonoBehaviour
 {
-    public Sprite[] interests;
-    public GameObject interestSprite;
-    public GameObject npc;
+    public Sprite interest;
+    public GameObject interestSprite, npc;
     private Rigidbody2D rb;
     private Vector3 movementDirection = new Vector3(1, 0, 0);
-    private bool moving = false;
+    public bool moving = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = npc.GetComponent<Rigidbody2D>();
-        interestSprite.GetComponent<SpriteRenderer>().sprite = interests[Random.Range(0,2)];
+        interestSprite.GetComponent<SpriteRenderer>().sprite = interest;
     }
 
     // Update is called once per frame
@@ -24,6 +23,7 @@ public class Npc : MonoBehaviour
         SpriteCheck();
         if (moving == false)
         {
+            //Debug.Log("move");
             StartCoroutine("move"); // this is created so that npcs can have other things than just movement
         }
     }
@@ -37,7 +37,7 @@ public class Npc : MonoBehaviour
     }
 
     private void newDirection()
-    {
+    { 
         movementDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
     }
 
@@ -62,13 +62,18 @@ public class Npc : MonoBehaviour
 
         if(contactPoint.x > center.x)
         {
-            Debug.Log("side");
+            //Debug.Log("side");
             movementDirection.x = movementDirection.x * -1;
         }
         else
         {
-            Debug.Log("top/bottom");
+            //Debug.Log("top/bottom");
             movementDirection.y = movementDirection.y * -1;
         }
+    }
+
+    public void SetFollow(GameObject l)
+    { 
+        this.GetComponent<Rigidbody2D>().isKinematic = true;
     }
 }
