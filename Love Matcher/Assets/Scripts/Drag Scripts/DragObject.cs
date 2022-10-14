@@ -25,7 +25,7 @@ public class DragObject : MonoBehaviour
 
     void OnMouseUp()
     {
-        transform.gameObject.tag = "Draggable";
+        if(transform.gameObject.tag == "Dragging") transform.gameObject.tag = "Draggable";
     }
 
     void OnMouseDrag()
