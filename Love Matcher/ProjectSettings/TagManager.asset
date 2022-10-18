@@ -8,6 +8,7 @@ TagManager:
   - Draggable
   - Dragging
   - Canvas
+  - Attached
   layers:
   - Default
   - TransparentFX

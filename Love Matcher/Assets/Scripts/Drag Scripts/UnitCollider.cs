@@ -31,7 +31,7 @@ public class UnitCollider : MonoBehaviour
             {
                 transform.SetParent(col.gameObject.transform, true);
                 dragging.SetFollow(col.gameObject);
-                transform.gameObject.tag = "Untagged";
+                transform.gameObject.tag = "Attached";
                 _canvas.GetComponent<UI>().CoupleTotal = 1;
             }
         }
