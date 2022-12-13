@@ -76,4 +76,10 @@ public class Npc : MonoBehaviour
     { 
         this.GetComponent<Rigidbody2D>().isKinematic = true;
     }
+
+
+    public void SetUnFollow()
+    {
+        this.GetComponent<Rigidbody2D>().isKinematic = false;
+    }
 }
