@@ -20,19 +20,22 @@ public class SlingshotScript : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (transform.gameObject.tag == "Draggable")
         {
-            startingPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            startingPoint.z = 15;
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                startingPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                startingPoint.z = 15;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            endPoint.z = 15;
+            if (Input.GetMouseButtonUp(0))
+            {
+                endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                endPoint.z = 15;
 
-            force = new Vector2(Mathf.Clamp(startingPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startingPoint.y - endPoint.y, minPower.y, maxPower.y));
-            rb.AddForce(force * power, ForceMode2D.Impulse);
+                force = new Vector2(Mathf.Clamp(startingPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startingPoint.y - endPoint.y, minPower.y, maxPower.y));
+                rb.AddForce(force * power, ForceMode2D.Impulse);
+            }
         }
     }
 }
