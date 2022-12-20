@@ -394,8 +394,8 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 72357529}
   m_maskType: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
+  _SortingLayerID: -105541197
+  _SortingOrder: 1
 --- !u!23 &72357529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -433,9 +433,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &72357530
 RectTransform:
@@ -4086,7 +4086,7 @@ GameObject:
   - component: {fileID: 1374972015}
   - component: {fileID: 1374972014}
   - component: {fileID: 1374972013}
-  m_Layer: 22
+  m_Layer: 0
   m_Name: instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4189,8 +4189,8 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1374972014}
   m_maskType: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
+  _SortingLayerID: -105541197
+  _SortingOrder: 1
 --- !u!23 &1374972014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4228,9 +4228,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &1374972015
 RectTransform:
@@ -4248,7 +4248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.63, y: 0.79}
+  m_AnchoredPosition: {x: 1.99, y: 0.77}
   m_SizeDelta: {x: 6, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1414569551
@@ -5153,6 +5153,18 @@ PrefabInstance:
     - target: {fileID: 883541504, guid: 040dc2895b252ef4cbd7e4445992b74b, type: 3}
       propertyPath: m_LinearDrag
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883541504, guid: 040dc2895b252ef4cbd7e4445992b74b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883541504, guid: 040dc2895b252ef4cbd7e4445992b74b, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883541504, guid: 040dc2895b252ef4cbd7e4445992b74b, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3288270137623718489, guid: 040dc2895b252ef4cbd7e4445992b74b,
         type: 3}

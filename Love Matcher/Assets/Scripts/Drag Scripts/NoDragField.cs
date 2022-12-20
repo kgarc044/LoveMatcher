@@ -28,13 +28,14 @@ public class NoDragField : MonoBehaviour
 
         if (col.gameObject.TryGetComponent(out Rigidbody2D body))
         {
-            if (body.velocity == new Vector2(0, 0))
+            //if (body.velocity == new Vector2(0, 0))
+            if (body.velocity.x < .2 && body.velocity.y < .2 && col.gameObject.name != "PF Player")
             {
                 Debug.Log("Stopped");
                 //Vector2 stopSpot = col.transform.position;
                 //var parti = GameObject.Instantiate(particle, new GameObject.transform.position() = stopSpot);
-                var parti = GameObject.Instantiate(particle, col.transform);
-                col.transform.position = new Vector2(0.15f, 6.05f);
+                var parti = GameObject.Instantiate(particle, col.transform); // create player die function
+                col.transform.position = new Vector2(0.15f, 6.05f); 
             }
         }
     }
