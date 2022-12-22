@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55561a796431e044cbcf627de840128e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenVase: {fileID: 0}
+  brokenVase: {fileID: 256396647108485226, guid: 22d019dd573fe844cb94016f9927f987,
+    type: 3}
+  keyFrag: {fileID: 993251830236356511, guid: 73890dd04accdd049b4c5f2af3d4eade, type: 3}
 --- !u!50 &5991955393677869495
 Rigidbody2D:
   serializedVersion: 4

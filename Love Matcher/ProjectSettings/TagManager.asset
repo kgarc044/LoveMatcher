@@ -9,6 +9,7 @@ TagManager:
   - Dragging
   - Canvas
   - Attached
+  - Key
   layers:
   - Default
   - TransparentFX

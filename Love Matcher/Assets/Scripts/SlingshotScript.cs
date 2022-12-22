@@ -4,6 +4,7 @@ public class SlingshotScript : MonoBehaviour
 {
     public float power = 10f;
     public Rigidbody2D rb;
+    public int keyCounter = 0;
 
     public Vector2 minPower;
     public Vector2 maxPower;
@@ -41,7 +42,14 @@ public class SlingshotScript : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Key")
+        {
+            keyCounter++;
+            Destroy(collision.gameObject);
+        }
+    }
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))

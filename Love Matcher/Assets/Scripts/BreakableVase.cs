@@ -2,7 +2,10 @@
 
 public class BreakableVase : MonoBehaviour
 {
-    public GameObject brokenVase; // Prefab for the broken vase
+    public GameObject brokenVase;
+    public GameObject keyFrag;// Prefab for the broken vase
+
+    public bool spawnKey = false;
 
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -11,7 +14,10 @@ public class BreakableVase : MonoBehaviour
         {
             // Instantiate the broken vase prefab at the same position and rotation as the vase
             Instantiate(brokenVase, transform.position, transform.rotation);
-
+            if (spawnKey == true)
+            {
+                Instantiate(keyFrag, transform.position, Quaternion.identity);
+            }
             // Destroy the vase game object
             Destroy(gameObject);
         }
