@@ -35,9 +35,12 @@ public class DragObject : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
-        rb.velocity = currentVelocity * 5;
+        if (transform.gameObject.tag == "Draggable" || transform.gameObject.tag == "Dragging")
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
+            rb.velocity = currentVelocity * 5;
+        }
     }
 
     Vector3 GetMousePos()
