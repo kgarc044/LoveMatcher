@@ -17,7 +17,6 @@ public class SlingshotScript : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-        transform.gameObject.tag = "Untagged";
     }
 
     private void Update()
@@ -37,7 +36,7 @@ public class SlingshotScript : MonoBehaviour
 
                 force = new Vector2(Mathf.Clamp(startingPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startingPoint.y - endPoint.y, minPower.y, maxPower.y));
                 rb.AddForce(force * power, ForceMode2D.Impulse);
-                transform.gameObject.tag = "Untagged";
+                transform.gameObject.tag = "Dragging";
             }
         }
     }

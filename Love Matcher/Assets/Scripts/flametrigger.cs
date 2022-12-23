@@ -5,6 +5,7 @@ using UnityEngine;
 public class flametrigger : MonoBehaviour
 {
     Rigidbody2D rb;
+    public GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,9 @@ public class flametrigger : MonoBehaviour
         }
         if (col.gameObject.tag == "Draggable" || col.gameObject.tag == "Dragging")
         {
-            //die code
+            Debug.Log("Die");
+            var parti = GameObject.Instantiate(particle, col.transform); 
+            col.transform.position = new Vector2(0.15f, 6.05f);
         }
     }
 }
