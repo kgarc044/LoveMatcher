@@ -29,7 +29,7 @@ public class NoDragField : MonoBehaviour
         if (col.gameObject.TryGetComponent(out Rigidbody2D body))
         {
             //if (body.velocity == new Vector2(0, 0))
-            if (body.velocity.x < .2 && body.velocity.y < .2 && col.gameObject.name != "PF Player")
+            if (body.velocity.x < .2 && body.velocity.y < .2 && col.gameObject.name == "Hero SlingShot")
             {
                 Debug.Log("Stopped");
                 //Vector2 stopSpot = col.transform.position;

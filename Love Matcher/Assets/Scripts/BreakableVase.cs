@@ -10,7 +10,7 @@ public class BreakableVase : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         // Check if the object that collided with the vase is tagged as "Player"
-        if (coll.collider.name == "Hero")
+        if (coll.collider.name == "Hero SlingShot")
         {
             // Instantiate the broken vase prefab at the same position and rotation as the vase
             Instantiate(brokenVase, transform.position, transform.rotation);

@@ -31,12 +31,25 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00000035762787, y: 0.24169946}
   m_Size: {x: 0.2208159, y: 0.2612424}
   m_Direction: 0
+--- !u!114 &3887573904301003850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993251830236356511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edded826f6a98dc45ba29e35bf14af2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroTotalKeys: {fileID: 0}
 --- !u!1001 &7170885237394868264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 7947911505737750450, guid: ebdc6ef285e0bf542bed7e9c1bfb9923,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750455, guid: ebdc6ef285e0bf542bed7e9c1bfb9923,
         type: 3}
