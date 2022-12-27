@@ -9,7 +9,7 @@ public class DoorScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(heroTotalKeys.keyCounter >= 3)
+        if(heroTotalKeys.keyCounter == 3)
         {
             Instantiate(openDoor, transform.position, transform.rotation);
             Destroy(gameObject);
