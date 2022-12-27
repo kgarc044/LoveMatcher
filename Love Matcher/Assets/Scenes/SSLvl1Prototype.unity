@@ -4305,20 +4305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 993251830236356506, guid: 73890dd04accdd049b4c5f2af3d4eade,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 993251830236356511, guid: 73890dd04accdd049b4c5f2af3d4eade,
         type: 3}
       propertyPath: m_Name
       value: KeyFragTemp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8916494395616214846, guid: 73890dd04accdd049b4c5f2af3d4eade,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73890dd04accdd049b4c5f2af3d4eade, type: 3}
